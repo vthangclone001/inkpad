@@ -1,0 +1,35 @@
+{
+ "name": "inkpad-desktop",
+ "version": "1.0.0",
+ "description": "InkPad – Sổ viết tay",
+ "main": "main.js",
+ "author": "InkPad",
+ "scripts": {
+  "start": "node prep.js && electron .",
+  "dist": "node prep.js && electron-builder"
+ },
+ "devDependencies": {
+  "electron": "^33.0.0",
+  "electron-builder": "^25.0.0"
+ },
+ "build": {
+  "appId": "vn.inkpad.app",
+  "productName": "InkPad",
+  "files": [
+   "main.js",
+   "app/**"
+  ],
+  "win": {
+   "target": "nsis",
+   "icon": "app/icons/icon-512.png"
+  },
+  "mac": {
+   "target": "dmg",
+   "icon": "app/icons/icon-512.png"
+  },
+  "linux": {
+   "target": "AppImage",
+   "icon": "app/icons/icon-512.png"
+  }
+ }
+}
